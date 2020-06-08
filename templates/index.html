@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> Text Perfect</title>
+      <style>
+nav{
+    width:100%;
+ height:60px;
+ display:flex;
+ flex-direction:column;
+          }
+          a{
+              font-size:40px;
+              position:absolute;
+              left:43%;
+
+              display:flex;
+              flex-direction:column;
+              font-family: 'Acme', sans-serif;
+          }
+          .form-control{
+            border:3px solid black;
+            outline:none;
+          }
+          .form-group{
+            font-family: 'Acme', sans-serif;
+            font-size:30px;
+          }
+          .alert alert-success alert-dismissible fade show{
+            left:40%;
+          }
+          .custom-control-label{
+            font-family: 'Acme', sans-serif;
+            font-size:20px;
+          }
+          .do{
+            width:100%;
+            height:40px;
+            background-color:#2D2D2E ;
+            font-size:15px;
+            color:white;
+            margin-top:20px;
+            padding-top:7px;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+          }
+          .ji{
+            width:100%;
+            height:30px;
+            background-color:#BEEEC0 ;
+            font-size:16px;
+            color:black;
+            margin-top:20px;
+            padding-top:2px;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+           font-family: 'Hind Madurai', sans-serif;
+          }
+          .ni{
+            padding-left: 75px;
+            font-family: 'Acme', sans-serif;
+            font-size:18px;
+          }
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> <h1> Text Perfect </h1> </a>
+</nav>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong> Welcome to Text Perfect</strong>  <br> You can do anything with your text here
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+    <div class ="container">
+        <form action='/analyze' method='post'> {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"> Enter the text here and lets create the magic !!</label>
+    <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="4"> </textarea>
+  </div>
+        <div class="custom-control custom-switch">
+  <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1"> Remove Punctuations </label>
+</div>
+         <div class="custom-control custom-switch">
+  <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2"> Uppercase</label>
+</div>
+         <div class="custom-control custom-switch">
+  <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch3">
+  <label class="custom-control-label" for="customSwitch3"> Newline Remover </label>
+</div>
+         <div class="custom-control custom-switch">
+  <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch4">
+  <label class="custom-control-label" for="customSwitch4"> Remove Extra Spaces </label> <br>
+</div>
+        <button type="submit" class="btn btn-dark"> Analyze text </button>
+    </form>
+    </div>
+      <div class="do">
+        How it Works
+      </div>
+  <p class="ni">
+  Write or paste your text into the text area. Select one or more text conversion methods from the given options.
+Thnen Click on the "Analyze Text" button. After that a new page will open and it contains converted text. For example, if you selected "Remove Punctuations" and "Convert to Uppercase" then
+the analyzed text i.e. converted text will not contain any punctuation and also it will be converted to uppercase.
+  </p>
+    <div class="do">
+      About Conversion methods
+ </div>
+    <div class="ji">
+     Remove Punctuations
+</div>
+<p class="ni">
+ It will remove all the punctuations from the entered text.
+</p>
+</div>
+<div class="ji">
+ Convert to Uppercase
+</div>
+<p class="ni">
+It will convert the whole text into Uppercase.
+</p>
+</div>
+<div class="ji">
+ Newline Remover
+</div>
+<p class="ni">
+It will remove all the new lines from the entered text.
+</p>
+</div>
+<div class="ji">
+ Remove Extra Spaces
+</div>
+<p class="ni">
+It will remove all the extra spaces from the entered text."Spaces" are all characters that look like a blank space, i.e. a space character, a tab character, a CR character, etc.
+</p>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

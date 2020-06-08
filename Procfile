@@ -1,0 +1,1 @@
+web: gunicorn textperfect.wsgi --log-file
