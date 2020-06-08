@@ -1,1 +1,1 @@
-web: gunicorn textperfect.wsgi --log-file
+web: gunicorn textperfect.wsgi --log-file -
